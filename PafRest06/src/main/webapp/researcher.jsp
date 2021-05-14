@@ -5,14 +5,14 @@ pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Sign-up page</title>
+<title>Sign-up</title>
 <link rel="stylesheet" href="Views/bootstrap.min.css">
 <script src="Components/jquery-3.2.1.min.js"></script>
 <script src="Components/researcher.js"></script>
 </head>
 <body> 
 <div class="container"><div class="row"><div class="col-6"> 
-<h2>Researcher Sign-up V10.1</h2>
+<h3>Researcher sign-up</h3>
 <form id="formItem" name="formItem">
  Researcher code: 
  <input id="itemCode" name="itemCode" type="text" 
