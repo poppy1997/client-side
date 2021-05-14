@@ -32,7 +32,7 @@ public class Researcher
 			} 
 			
 			// Prepare the html table to be displayed
-			output = "<table border='1'><tr><th>Researcher Code</th> <th>Researcher Name</th><th>Total Price</th>"+ "<th>Researcher Description</th> <th>Update</th><th>Remove</th></tr>"; 
+			output = "<table border='1'><tr><th>Researcher Code</th> <th>Researcher Name</th>"+ "<th>Researcher Description</th> <th>Update</th><th>Remove</th></tr>"; 
 			String query = "select * from researcher"; 
 			Statement stmt = con.createStatement(); 
 			ResultSet rs = stmt.executeQuery(query); 
@@ -43,13 +43,13 @@ public class Researcher
 				String itemID = Integer.toString(rs.getInt("itemID")); 
 				String itemCode = rs.getString("itemCode"); 
 				String itemName = rs.getString("itemName");
-				String itemPrice = Double.toString(rs.getDouble("itemPrice")); 
+				
 				String itemDesc = rs.getString("itemDesc"); 
 	
 				// Add into the html table
 				output += "<tr><td><input id='hidItemIDUpdate' name='hidItemIDUpdate' type='hidden' value='" + itemID+ "'>" + itemCode + "</td>"; 
 				output += "<td>" + itemName + "</td>"; 
-				output += "<td>" + itemPrice + "</td>"; 
+				
 				output += "<td>" + itemDesc + "</td>"; 
 	 
 				// buttons
@@ -82,15 +82,15 @@ public class Researcher
 		 } 
 		 
 		 // create a prepared statement
-		 String query = " insert into researcher (`itemID`,`itemCode`,`itemName`,`itemPrice`,`itemDesc`)" + " values (?, ?, ?, ?, ?)";
+		 String query = " insert into researcher (`itemID`,`itemCode`,`itemName`,`itemDesc`)" + " values (?, ?, ?, ?)";
 		 PreparedStatement preparedStmt = con.prepareStatement(query); 
 			 
 		 // binding values
 		 preparedStmt.setInt(1, 0); 
 		 preparedStmt.setString(2, code); 
 		 preparedStmt.setString(3, name); 
-		 preparedStmt.setDouble(4, Double.parseDouble(price)); 
-		 preparedStmt.setString(5, desc); 
+		 
+		 preparedStmt.setString(4, desc); 
 			 
 		// execute the statement
 		 preparedStmt.execute(); 
@@ -116,14 +116,14 @@ public class Researcher
 		 		return "Error while connecting to the database for updating."; 
 		 } 
 		 	// create a prepared statement
-		 	String query = "UPDATE researcher SET itemCode=?,itemName=?,itemPrice=?,itemDesc=? WHERE itemID=?"; 
+		 	String query = "UPDATE researcher SET itemCode=?,itemName=?,itemDesc=? WHERE itemID=?"; 
 		 	PreparedStatement preparedStmt = con.prepareStatement(query); 
 		 	// binding value
 		 	preparedStmt.setString(1, code); 
 		 	preparedStmt.setString(2, name); 
-		 	preparedStmt.setDouble(3, Double.parseDouble(price)); 
-		 	preparedStmt.setString(4, desc); 
-		 	preparedStmt.setInt(5, Integer.parseInt(itemID)); 
+		 	
+		 	preparedStmt.setString(3, desc); 
+		 	preparedStmt.setInt(4, Integer.parseInt(itemID)); 
 		 	// execute the statement
 		 	preparedStmt.execute(); 
 		 	con.close(); 

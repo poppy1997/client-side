@@ -5,14 +5,14 @@ pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Researcher Management</title>
+<title>Sign-up page</title>
 <link rel="stylesheet" href="Views/bootstrap.min.css">
 <script src="Components/jquery-3.2.1.min.js"></script>
-<script src="Components/items.js"></script>
+<script src="Components/researcher.js"></script>
 </head>
 <body> 
 <div class="container"><div class="row"><div class="col-6"> 
-<h2>Researcher Management V10.1</h2>
+<h2>Researcher Sign-up V10.1</h2>
 <form id="formItem" name="formItem">
  Researcher code: 
  <input id="itemCode" name="itemCode" type="text" 
@@ -20,9 +20,7 @@ pageEncoding="ISO-8859-1"%>
  <br> Researcher name: 
  <input id="itemName" name="itemName" type="text" 
  class="form-control form-control-sm">
- <br> Total price: 
- <input id="itemPrice" name="itemPrice" type="text" 
- class="form-control form-control-sm">
+ 
  <br> Researcher description: 
  <input id="itemDesc" name="itemDesc" type="text" 
  class="form-control form-control-sm">
