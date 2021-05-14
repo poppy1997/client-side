@@ -8,7 +8,7 @@ pageEncoding="ISO-8859-1"%>
 <title>Project Management</title>
 <link rel="stylesheet" href="Views/bootstrap.min.css">
 <script src="Components/jquery-3.2.1.min.js"></script>
-<script src="Components/items.js"></script>
+<script src="Components/project.js"></script>
 </head>
 <body> 
 <div class="container"><div class="row"><div class="col-6"> 
@@ -20,7 +20,7 @@ pageEncoding="ISO-8859-1"%>
  <br> Project name: 
  <input id="itemName" name="itemName" type="text" 
  class="form-control form-control-sm">
- <br> Price: 
+ <br> Price:(in USD) 
  <input id="itemPrice" name="itemPrice" type="text" 
  class="form-control form-control-sm">
  <br> Project description: 
