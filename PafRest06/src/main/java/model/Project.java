@@ -33,7 +33,7 @@ public class Project
 			
 			// Prepare the html table to be displayed
 			output = "<table border='1'><tr><th>Project Code</th> <th>Project Name</th><th>Price</th>"+ "<th>Project Description</th> <th>Update</th><th>Remove</th></tr>"; 
-			String query = "select * from project-new"; 
+			String query = "select * from project"; 
 			Statement stmt = con.createStatement(); 
 			ResultSet rs = stmt.executeQuery(query); 
 			
@@ -82,7 +82,7 @@ public class Project
 		 } 
 		 
 		 // create a prepared statement
-		 String query = " insert into project-new (`itemID`,`itemCode`,`itemName`,`itemPrice`,`itemDesc`)" + " values (?, ?, ?, ?, ?)";
+		 String query = " insert into project (`itemID`,`itemCode`,`itemName`,`itemPrice`,`itemDesc`)" + " values (?, ?, ?, ?, ?)";
 		 PreparedStatement preparedStmt = con.prepareStatement(query); 
 			 
 		 // binding values
@@ -116,7 +116,7 @@ public class Project
 		 		return "Error while connecting to the database for updating."; 
 		 } 
 		 	// create a prepared statement
-		 	String query = "UPDATE project-new SET itemCode=?,itemName=?,itemPrice=?,itemDesc=? WHERE itemID=?"; 
+		 	String query = "UPDATE project SET itemCode=?,itemName=?,itemPrice=?,itemDesc=? WHERE itemID=?"; 
 		 	PreparedStatement preparedStmt = con.prepareStatement(query); 
 		 	// binding value
 		 	preparedStmt.setString(1, code); 
@@ -150,7 +150,7 @@ public class Project
 		 return "Error while connecting to the database for deleting."; 
 		 } 
 		 // create a prepared statement
-		 String query = "delete from project-new where itemID=?"; 
+		 String query = "delete from project where itemID=?"; 
 		 PreparedStatement preparedStmt = con.prepareStatement(query); 
 		 // binding values
 		 preparedStmt.setInt(1, Integer.parseInt(itemID)); 

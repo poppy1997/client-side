@@ -1,4 +1,4 @@
-<%@page import="model.Researcher"%>
+<%@page import="model.Project"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -36,7 +36,7 @@ pageEncoding="ISO-8859-1"%>
 <br>
 <div id="divItemsGrid">
  <%
- Researcher itemObj = new Researcher(); 
+ Project itemObj = new Project(); 
   out.print(itemObj.readItems());
  %>
 </div>
