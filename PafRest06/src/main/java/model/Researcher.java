@@ -32,7 +32,7 @@ public class Researcher
 			} 
 			
 			// Prepare the html table to be displayed
-			output = "<table border='1'><tr><th>Researcher Code</th> <th>Researcher Name</th>"+ "<th>Researcher Description</th> <th>Update</th><th>Remove</th></tr>"; 
+			output = "<table id=customers border='1'><tr><th>Researcher Code</th> <th>Researcher Name</th>"+ "<th>Researcher Description</th> <th>Update</th><th>Remove</th></tr>"; 
 			String query = "select * from researcher"; 
 			Statement stmt = con.createStatement(); 
 			ResultSet rs = stmt.executeQuery(query); 
